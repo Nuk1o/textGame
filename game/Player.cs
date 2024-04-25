@@ -31,7 +31,7 @@ namespace game
             Console.Write("Можно пройти - ");
             foreach (var exit in CurrentLocation.Exits)
             {
-                Console.Write($"{exit.Key}\t");
+                Console.Write($"{exit.Key} ");
             }
             Console.WriteLine();
         }

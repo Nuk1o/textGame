@@ -9,6 +9,7 @@ class Program
         ILocation corridor = new Location("коридор", "Коридор, ничего интересного.");
         ILocation room = new Location("комната", "Пустая комната.");
         ILocation street = new Location("улица", "На улице весна.");
+        ILocation university = new Location("университет", "Ну вот мы и пришли.");
 
         // Добавляем предметы в локации
         kitchen.AddItem(new Item("ключи"));
@@ -21,7 +22,8 @@ class Program
         corridor.Exits.Add("комната", room);
         corridor.Exits.Add("улица", street);
         room.Exits.Add("коридор", corridor);
-        street.Exits.Add("домой", corridor); // Предполагается, что улица ведет к дому
+        street.Exits.Add("университет", university);
+        university.Exits.Add("улица", street);
 
         IPlayer player = new Player();
         player.CurrentLocation = kitchen;
